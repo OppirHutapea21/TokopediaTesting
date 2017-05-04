@@ -1,0 +1,37 @@
+*** Settings ***
+Library           Selenium2Library
+
+*** Variables ***
+${URL}            https://www.tokopedia.com/contact-us#step7
+${BROWSER}        firefox
+${DETAIL PERMASALAHAN}    Testing ini dilakukan dengan menggunakan Robot Framework.
+${DETAIL LOKASI PERMASALAHAN}    id=ticket_reply_msg
+${FULL NAME}      Oppir Hutapea
+${FULL NAME LOKASI ID}    id=full_name
+${EMAIL}          oppirhutapea19@gmail.com
+${LOKASI EMAIL ID}    id=user_email
+${FILE}           ${EMPTY}
+${LOKASI FILE}    C:\\Test
+${AUTOEXE}        C:\\Test\\FileAuto.exe
+${AUTOEXE ID}     id=pickfiles-nav1
+
+*** Keywords ***
+Enter Detail Problem
+    [Arguments]    ${DETAIL PERMASALAHAN}
+    Input Text    ${DETAIL LOKASI PERMASALAHAN}    ${DETAIL PERMASALAHAN}
+    Input Text    xpath=//*[@id='ticket_reply_msg']    ${DETAIL PERMASALAHAN}
+
+Enter full name
+    [Arguments]    ${FULL NAME}
+    Input Text    ${FULL NAME LOKASI ID}    ${FULL NAME}
+    Input Text    xpath=//*[@id='full_name'] ${FULL NAME}
+
+Enter Email
+    [Arguments]    ${EMAIL}
+    Input Text    ${LOKASI EMAIL ID}    ${EMAIL}
+    Input Text    xpath=//*[@id='user_email'] ${EMAIL}
+
+Enter File
+    [Arguments]    ${FILE}
+    Input Text    ${LOKASI FILE}    ${FILE}
+    Input Text    xpath=//*[@id='pickfiles-nav1'] ${FILE}
